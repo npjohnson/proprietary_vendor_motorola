@@ -43,6 +43,26 @@ android_app_import {
 }
 
 android_app_import {
+	name: "atfwd",
+	owner: "motorola",
+	apk: "proprietary/app/atfwd/atfwd.apk",
+	certificate: "platform",
+	dex_preopt: {
+		enabled: false,
+	},
+}
+
+android_app_import {
+	name: "ims",
+	owner: "motorola",
+	apk: "proprietary/app/ims/ims.apk",
+	certificate: "platform",
+	dex_preopt: {
+		enabled: false,
+	},
+}
+
+android_app_import {
 	name: "AppDirectedSMSProxy",
 	owner: "motorola",
 	apk: "proprietary/priv-app/AppDirectedSMSProxy/AppDirectedSMSProxy.apk",
@@ -172,5 +192,35 @@ android_app_import {
 		enabled: false,
 	},
 	privileged: true,
+}
+
+dex_import {
+	name: "com.verizon.hardware.telephony.ehrpd",
+	owner: "motorola",
+	jars: ["proprietary/framework/com.verizon.hardware.telephony.ehrpd.jar"],
+}
+
+dex_import {
+	name: "com.verizon.hardware.telephony.lte",
+	owner: "motorola",
+	jars: ["proprietary/framework/com.verizon.hardware.telephony.lte.jar"],
+}
+
+dex_import {
+	name: "com.verizon.ims",
+	owner: "motorola",
+	jars: ["proprietary/framework/com.verizon.ims.jar"],
+}
+
+dex_import {
+	name: "rcsimssettings",
+	owner: "motorola",
+	jars: ["proprietary/framework/rcsimssettings.jar"],
+}
+
+dex_import {
+	name: "rcsservice",
+	owner: "motorola",
+	jars: ["proprietary/framework/rcsservice.jar"],
 }
 

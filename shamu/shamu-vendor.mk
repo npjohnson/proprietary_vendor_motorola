@@ -6,11 +6,14 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/motorola/shamu
 
 PRODUCT_COPY_FILES += \
+    vendor/motorola/shamu/proprietary/bin/ATFWD-daemon:$(TARGET_COPY_OUT_SYSTEM)/bin/ATFWD-daemon \
     vendor/motorola/shamu/proprietary/bin/adspd:$(TARGET_COPY_OUT_SYSTEM)/bin/adspd \
     vendor/motorola/shamu/proprietary/bin/bridgemgrd:$(TARGET_COPY_OUT_SYSTEM)/bin/bridgemgrd \
     vendor/motorola/shamu/proprietary/bin/cnd:$(TARGET_COPY_OUT_SYSTEM)/bin/cnd \
     vendor/motorola/shamu/proprietary/bin/diag_klog:$(TARGET_COPY_OUT_SYSTEM)/bin/diag_klog \
     vendor/motorola/shamu/proprietary/bin/diag_mdlog:$(TARGET_COPY_OUT_SYSTEM)/bin/diag_mdlog \
+    vendor/motorola/shamu/proprietary/bin/imsdatadaemon:$(TARGET_COPY_OUT_SYSTEM)/bin/imsdatadaemon \
+    vendor/motorola/shamu/proprietary/bin/imsqmidaemon:$(TARGET_COPY_OUT_SYSTEM)/bin/imsqmidaemon \
     vendor/motorola/shamu/proprietary/bin/irsc_util:$(TARGET_COPY_OUT_SYSTEM)/bin/irsc_util \
     vendor/motorola/shamu/proprietary/bin/ks:$(TARGET_COPY_OUT_SYSTEM)/bin/ks \
     vendor/motorola/shamu/proprietary/bin/mdm_helper:$(TARGET_COPY_OUT_SYSTEM)/bin/mdm_helper \
@@ -33,13 +36,19 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/shamu/proprietary/etc/Headset_cal.acdb:$(TARGET_COPY_OUT_SYSTEM)/etc/Headset_cal.acdb \
     vendor/motorola/shamu/proprietary/etc/Speaker_cal.acdb:$(TARGET_COPY_OUT_SYSTEM)/etc/Speaker_cal.acdb \
     vendor/motorola/shamu/proprietary/etc/diag/mdm/FIT_V16_1.cfg:$(TARGET_COPY_OUT_SYSTEM)/etc/diag/mdm/FIT_V16_1.cfg \
+    vendor/motorola/shamu/proprietary/etc/diag/mdm/FIT_V16_2_volte_full_ip.cfg:$(TARGET_COPY_OUT_SYSTEM)/etc/diag/mdm/FIT_V16_2_volte_full_ip.cfg \
     vendor/motorola/shamu/proprietary/etc/diag/mdm/FIT_V16_3_audio.cfg:$(TARGET_COPY_OUT_SYSTEM)/etc/diag/mdm/FIT_V16_3_audio.cfg \
     vendor/motorola/shamu/proprietary/etc/firmware/cpp_firmware_v1_6_0.fw:$(TARGET_COPY_OUT_SYSTEM)/etc/firmware/cpp_firmware_v1_6_0.fw \
     vendor/motorola/shamu/proprietary/etc/firmware/cpp_firmware_v1_8_0.fw:$(TARGET_COPY_OUT_SYSTEM)/etc/firmware/cpp_firmware_v1_8_0.fw \
     vendor/motorola/shamu/proprietary/etc/flp.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/flp.conf \
     vendor/motorola/shamu/proprietary/etc/permissions/com.android.omadm.service.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.android.omadm.service.xml \
     vendor/motorola/shamu/proprietary/etc/permissions/com.motorola.DirectedSMSProxy.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.motorola.DirectedSMSProxy.xml \
+    vendor/motorola/shamu/proprietary/etc/permissions/com.verizon.hardware.telephony.ehrpd.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.verizon.hardware.telephony.ehrpd.xml \
+    vendor/motorola/shamu/proprietary/etc/permissions/com.verizon.hardware.telephony.lte.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.verizon.hardware.telephony.lte.xml \
+    vendor/motorola/shamu/proprietary/etc/permissions/com.verizon.ims.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.verizon.ims.xml \
     vendor/motorola/shamu/proprietary/etc/permissions/com.vzw.vzwapnlib.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.vzw.vzwapnlib.xml \
+    vendor/motorola/shamu/proprietary/etc/permissions/rcsimssettings.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/rcsimssettings.xml \
+    vendor/motorola/shamu/proprietary/etc/permissions/rcsservice.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/rcsservice.xml \
     vendor/motorola/shamu/proprietary/etc/ril/qcril.db:$(TARGET_COPY_OUT_SYSTEM)/etc/ril/qcril.db \
     vendor/motorola/shamu/proprietary/etc/sensors/sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/sensors/sensor_def_qcomdev.conf \
     vendor/motorola/shamu/proprietary/etc/sysconfig/whitelist_com.android.omadm.service.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/whitelist_com.android.omadm.service.xml \
@@ -49,6 +58,8 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/shamu/proprietary/lib/libdmengine.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libdmengine.so \
     vendor/motorola/shamu/proprietary/lib/libdmjavaplugin.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libdmjavaplugin.so \
     vendor/motorola/shamu/proprietary/lib/libflacencoder.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libflacencoder.so \
+    vendor/motorola/shamu/proprietary/lib/libimscamera_jni.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libimscamera_jni.so \
+    vendor/motorola/shamu/proprietary/lib/libimsmedia_jni.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libimsmedia_jni.so \
     vendor/motorola/shamu/proprietary/lib/libmdmdetect.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libmdmdetect.so \
     vendor/motorola/shamu/proprietary/lib/libmotaudioutils.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libmotaudioutils.so \
     vendor/motorola/shamu/proprietary/vendor/lib/soundfx/libspeakerbundle.so:$(TARGET_COPY_OUT_VENDOR)/lib/soundfx/libspeakerbundle.so \
@@ -125,6 +136,20 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/shamu/proprietary/vendor/lib/hw/activity_recognition.msm8084.so:$(TARGET_COPY_OUT_VENDOR)/lib/hw/activity_recognition.msm8084.so \
     vendor/motorola/shamu/proprietary/vendor/lib/hw/flp.msm8084.so:$(TARGET_COPY_OUT_VENDOR)/lib/hw/flp.msm8084.so \
     vendor/motorola/shamu/proprietary/vendor/lib/hw/sensors.msm8084.so:$(TARGET_COPY_OUT_VENDOR)/lib/hw/sensors.msm8084.so \
+    vendor/motorola/shamu/proprietary/vendor/lib/lib-dplmedia.so:$(TARGET_COPY_OUT_VENDOR)/lib/lib-dplmedia.so \
+    vendor/motorola/shamu/proprietary/vendor/lib/lib-imsSDP.so:$(TARGET_COPY_OUT_VENDOR)/lib/lib-imsSDP.so \
+    vendor/motorola/shamu/proprietary/vendor/lib/lib-imsdpl.so:$(TARGET_COPY_OUT_VENDOR)/lib/lib-imsdpl.so \
+    vendor/motorola/shamu/proprietary/vendor/lib/lib-imsqimf.so:$(TARGET_COPY_OUT_VENDOR)/lib/lib-imsqimf.so \
+    vendor/motorola/shamu/proprietary/vendor/lib/lib-imsrcs.so:$(TARGET_COPY_OUT_VENDOR)/lib/lib-imsrcs.so \
+    vendor/motorola/shamu/proprietary/vendor/lib/lib-imss.so:$(TARGET_COPY_OUT_VENDOR)/lib/lib-imss.so \
+    vendor/motorola/shamu/proprietary/vendor/lib/lib-imsvt.so:$(TARGET_COPY_OUT_VENDOR)/lib/lib-imsvt.so \
+    vendor/motorola/shamu/proprietary/vendor/lib/lib-imsxml.so:$(TARGET_COPY_OUT_VENDOR)/lib/lib-imsxml.so \
+    vendor/motorola/shamu/proprietary/vendor/lib/lib-rcsimssjni.so:$(TARGET_COPY_OUT_VENDOR)/lib/lib-rcsimssjni.so \
+    vendor/motorola/shamu/proprietary/vendor/lib/lib-rcsjni.so:$(TARGET_COPY_OUT_VENDOR)/lib/lib-rcsjni.so \
+    vendor/motorola/shamu/proprietary/vendor/lib/lib-rtpcommon.so:$(TARGET_COPY_OUT_VENDOR)/lib/lib-rtpcommon.so \
+    vendor/motorola/shamu/proprietary/vendor/lib/lib-rtpcore.so:$(TARGET_COPY_OUT_VENDOR)/lib/lib-rtpcore.so \
+    vendor/motorola/shamu/proprietary/vendor/lib/lib-rtpdaemoninterface.so:$(TARGET_COPY_OUT_VENDOR)/lib/lib-rtpdaemoninterface.so \
+    vendor/motorola/shamu/proprietary/vendor/lib/lib-rtpsl.so:$(TARGET_COPY_OUT_VENDOR)/lib/lib-rtpsl.so \
     vendor/motorola/shamu/proprietary/vendor/lib/libC2D2.so:$(TARGET_COPY_OUT_VENDOR)/lib/libC2D2.so \
     vendor/motorola/shamu/proprietary/vendor/lib/libCB.so:$(TARGET_COPY_OUT_VENDOR)/lib/libCB.so \
     vendor/motorola/shamu/proprietary/vendor/lib/libQSEEComAPI.so:$(TARGET_COPY_OUT_VENDOR)/lib/libQSEEComAPI.so \
@@ -276,6 +301,7 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/shamu/proprietary/vendor/lib/libsysutils_local.so:$(TARGET_COPY_OUT_VENDOR)/lib/libsysutils_local.so \
     vendor/motorola/shamu/proprietary/vendor/lib/libthermalclient.so:$(TARGET_COPY_OUT_VENDOR)/lib/libthermalclient.so \
     vendor/motorola/shamu/proprietary/vendor/lib/libthermalioctl.so:$(TARGET_COPY_OUT_VENDOR)/lib/libthermalioctl.so \
+    vendor/motorola/shamu/proprietary/vendor/lib/libvcel.so:$(TARGET_COPY_OUT_VENDOR)/lib/libvcel.so \
     vendor/motorola/shamu/proprietary/vendor/lib/libwvdrm_L1.so:$(TARGET_COPY_OUT_VENDOR)/lib/libwvdrm_L1.so \
     vendor/motorola/shamu/proprietary/vendor/lib/libxml.so:$(TARGET_COPY_OUT_VENDOR)/lib/libxml.so \
     vendor/motorola/shamu/proprietary/vendor/lib/mediadrm/libwvdrmengine.so:$(TARGET_COPY_OUT_VENDOR)/lib/mediadrm/libwvdrmengine.so
@@ -284,6 +310,8 @@ PRODUCT_PACKAGES += \
     libtime_genoff \
     HiddenMenu \
     VZWAPNLib \
+    atfwd \
+    ims \
     AppDirectedSMSProxy \
     BuaContactAdapter \
     CNEService \
@@ -295,4 +323,9 @@ PRODUCT_PACKAGES += \
     LifetimeData \
     MotoSignatureApp \
     SprintDM \
-    VZWAPNService
+    VZWAPNService \
+    com.verizon.hardware.telephony.ehrpd \
+    com.verizon.hardware.telephony.lte \
+    com.verizon.ims \
+    rcsimssettings \
+    rcsservice
